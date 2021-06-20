@@ -38,6 +38,7 @@ const Login = styled.button`
     color: white;
     font-size: 16px;
     cursor: pointer;
+    padding-right: 20px;
 `;
 
 export const NavBar = () => (

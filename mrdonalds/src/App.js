@@ -1,6 +1,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { NavBar } from './Components/NavBar';
+import { Menu } from './Components/Menu';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -47,6 +48,14 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+
+  button {
+    cursor: pointer;
+  }
+
+  input, button {
+    font-family: inherit;
+  }
 `;
 
 function App() {
@@ -54,6 +63,7 @@ function App() {
     <>
       <GlobalStyle/>
       <NavBar/>
+      <Menu/>
     </>
 
   );

@@ -9,7 +9,7 @@ const NavBarStyled = styled.header`
     left: 0;
     z-index: 999;
     height: 80px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,7 +38,7 @@ const Login = styled.button`
     color: white;
     font-size: 16px;
     cursor: pointer;
-    padding-right: 20px;
+
 `;
 
 export const NavBar = () => (
@@ -50,6 +50,6 @@ export const NavBar = () => (
         <Login>
             <img src={signImg} alt="Войти"/>
             <p>Войти</p>
-                </Login>
+        </Login>
     </NavBarStyled>
 );

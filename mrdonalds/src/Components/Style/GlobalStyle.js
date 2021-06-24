@@ -51,6 +51,11 @@ button {
 }
 
 input, button {
-  font-family: inherit;
+  font: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 `;

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { ButtonCheckout } from '../Style/ButtonCheckout';
 import { CountItem } from './CountItem';
 import { useCount } from '../Hooks/useCount';
+import { totalPriceItems } from '../Functions/secondaryFunction';
+import { formatCurrency } from '../Functions/secondaryFunction';
 
 const Overlay = styled.div`
     position: fixed;
@@ -54,8 +56,6 @@ const TotalPriceItem = styled.div`
     justify-content: space-between;
 `;
 
-export const totalPriceItems = order => order.price * order.count;
-
 
 export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
 
@@ -90,7 +90,7 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
                     <CountItem {...counter}/>
                     <TotalPriceItem>
                         <span>Цена:</span>
-                        <span>{totalPriceItems(order).toLocaleString('ru-RU', {style: 'currency', currency: 'RUB'})}</span>
+                        <span>{formatCurrency(totalPriceItems(order))}</span>
                     </TotalPriceItem>
 
                     <ButtonCheckout onClick={addToOrder}>Добавить</ButtonCheckout>

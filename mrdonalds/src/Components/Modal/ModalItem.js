@@ -77,7 +77,7 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
         ...openItem,
         count: counter.count,
         topping: toppings.toppings,
-        choices: choices.choice,
+        choice: choices.choice,
     }
     
     const addToOrder = () => {
@@ -102,7 +102,9 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
                         <span>Цена:</span>
                         <span>{formatCurrency(totalPriceItems(order))}</span>
                     </TotalPriceItem>
-                    <ButtonCheckout onClick={addToOrder}>Добавить</ButtonCheckout>
+                    <ButtonCheckout onClick={addToOrder}
+                    disabled={order.choices && !order.choice}
+                    >Добавить</ButtonCheckout>
                 </Content>
                 
             </Modal>

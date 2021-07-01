@@ -10,7 +10,7 @@ export const formatCurrency = value => value.toLocaleString('ru-RU', { style: 'c
 export const projection = rules => {
     const keys = Object.keys(rules);
     return obj => keys.reduce((newObj, key) => {
-        newObj[key] = rules[key].reduce((val, fn, i) => (i ? true : obj[fn]), null)
+        newObj[key] = rules[key].reduce((val, fn, i) => (i ? fn(val) : obj[fn]), null)
         return newObj;
     }, {})
 };
